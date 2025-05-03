@@ -1,38 +1,40 @@
 {% extends 'base.html' %}
 
 {% block head %} 
-<title>Task Smash</title>
+<title>Productivity5000</title>
 {% endblock %}
 {% block body %}
 <div class="content">
-    <h1>Task Smash 2.0</h1>
+    
 
-    {% if tasks | length < 1 %}
-    <h3>There are no tasks... Create one here!</h3>
-    {% else %}
+    
     <table>
         <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-                <td>{{task.content}}</td>
-                <td>{{task.created.strftime("%Y-%m-%d")}}</td>
-                <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
-                    <br />
-                    <a href="/edit/{{task.id}}">Edit</a>
+            <th>Paradigm <select name="paradigm" id="paradigm">
+                <option value="Default">Default</option>
+            </select>              
+                <td style="text-align: left;">
+                    <a href="/">Dashboard</a>
+                    <a href="/">Tag</a>
+                    <a href="/">Context</a>
+                    <a href="/">Move</a>
+                    <a href="/" style="float: right;">Options</a>
+                    
                 </td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content" />
-        <input type="submit" value="Add Task" id="btn_add" />
+            </th>
+        </tr>
+        
+            <tr class="folders-row" >
+                <td style="width: 125px;">
+                    Folders
+                </td>
+                <td>
 
-    </form>
+                </td>
+                
+            </tr>
+    </table>
+    
 </div>
 {% endblock %}
+
