@@ -8,6 +8,7 @@ from datetime import datetime
 #My App
 app = Flask(__name__)
 Scss(app)
+BASE_DIR = "user_folders"
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 db = SQLAlchemy(app)
